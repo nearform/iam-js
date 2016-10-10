@@ -11,19 +11,12 @@ IAM-js is a Policy Based Access Control library, closed modeled on AWS IAM. Also
 Protect your resources in our application called foo:
 ```
 const iam = require('iam-js');
-if (iam.process('user1', 'foo:bar-resource1', 'foo:deleteBar') {
+// iam.process(<resource>, <action>, <varibables>)
+if (iam.process('foo:bar-resource1', 'foo:deleteBar', {UserName: 'user1'}) {
   // it's allowed
   ...	
 } else {
   // raise an error
-}
-```
-
-List what actions a user can perform on a resource:
-```
-iam.actions('user1', 'foo:bar-resource1', function (err, actions)) {
-  ...
-  // actions: ['foo:deleteBar']
 }
 ```
 
@@ -37,18 +30,21 @@ iam.createPolicies([{
 }], function callabck..)
 ```
 
-Policies are attached to Users & Teams. 
+Policies are attached to Users & Teams, that is outside the scope of this library - there are no users & teams here, just policies. Also additional functionality, like listing what actions a user can perform on a resource are also out of scope here. 
 
-## Technical Overview
+## Why Policy Based Access Control (PBAC)
 
-TODO PBAC vs RBAC, etc
+Great summary of the history of various access control mechanisms: http://csrc.nist.gov/news_events/privilege-management-workshop/PvM-Model-Survey-Aug26-2009.pdf and note that Risk-Adaptive Access Control is a stretch goal ;-)
 
 ## AWS IAM
 
-This project is heavily based on AWS IAM, in whicl a policy is a document that formally states one or more permissions: http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html. Note in IAM terms we are not doing resource based policies, or inline policies, just 'managed policies'.
+This effort is heavily based on AWS IAM: http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html. Note in IAM terms we are not doing resource based policies or inline policies, just managed policies for now.
 
-We are also not doing roles (for now at least), teams (or groups in IAM terminology) should be sufficient for the initial version.
+We are also not doing roles (for now at least); teams (or groups in IAM terminology) should be sufficient for the initial version.
 
-The following module seems to satisfy our requirements here so far: https://www.npmjs.com/package/pbac.  
+The following module seems to satisfy our requirements here so far: https://www.npmjs.com/package/pbac, and so far this library is a small wrapper around this module. Whether we use that module directly or continue to wrap it is up for debate.
 
+## Misc additional links
 
+http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html
+http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html
