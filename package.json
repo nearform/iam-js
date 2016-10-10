@@ -16,7 +16,7 @@
     "sinon": "1.17.6"
   },
   "dependencies": {
-    "open-iam": "0.0.12",
-    "pbac": "0.1.2"
+    "open-iam": "0.0.12",    
+    "pbac": "dberesford/node-pbac"
   }
 }

@@ -5,7 +5,7 @@ const {describe, it, before} = lab
 const sinon = require('sinon')
 const iam = require('../lib/index.js')
 
-describe('Basic access tests', () => {
+describe('Ownership', () => {
 	var policies = [{
 		Version: '2106-10-17',
 		Statement: [{
@@ -15,7 +15,7 @@ describe('Basic access tests', () => {
 				'foo:bar:list',
 				'foo:bar:read',
 				'foo:bar:publish'],
-			Resource: ['resources/thing1/*']
+			Resource: ['resources/${req:UserName}/*']
 		}]
 	}]
 
@@ -26,7 +26,7 @@ describe('Basic access tests', () => {
 	}) */
 
 	it('should allow', done => {
-		iam.process(policies, 'resources/thing1/businessasusual', 'foo:bar:list', (err, result) => {
+		iam.process(policies, 'resources/bob/something', 'foo:bar:list', {UserName: 'bob'}, (err, result) => {
 			assert.ok(!err)
 			assert.equal(result, true)
 			done()
@@ -34,7 +34,7 @@ describe('Basic access tests', () => {
 	})
 
 	it('should not allow', done => {
-		iam.process(policies, 'resources/thing2', 'foo:bar:list', (err, result) => {
+		iam.process(policies, 'resources/fred/anotherthing', 'foo:bar:list', (err, result) => {
 			assert.ok(!err)
 			assert.equal(result, false)
 			done()

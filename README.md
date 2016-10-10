@@ -47,6 +47,8 @@ TODO PBAC vs RBAC, etc
 
 This project is heavily based on AWS IAM, in whicl a policy is a document that formally states one or more permissions: http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html. Note in IAM terms we are not doing resource based policies, or inline policies, just 'managed policies'.
 
-We are also not doing roles (for now at least), teams (or groups in IAM terminology) should be sufficuent for the initial version. 
+We are also not doing roles (for now at least), teams (or groups in IAM terminology) should be sufficient for the initial version.
+
+The following module seems to satisfy our requirements here so far: https://www.npmjs.com/package/pbac.  
 
 
