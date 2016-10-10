@@ -1,0 +1,22 @@
+{
+  "name": "iam-js",
+  "version": "1.0.0",
+  "description": "Policy Based Access Control inspired by AWS IAM",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "lab -I '__core-js_shared__' test",
+    "lint": "eslint ."
+  },
+  "author": "github.com/dberesford",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "3.6.1",
+    "lab": "11.1.0",
+    "power-assert": "1.4.1",
+    "sinon": "1.17.6"
+  },
+  "dependencies": {
+    "open-iam": "0.0.12",
+    "pbac": "0.1.2"
+  }
+}
