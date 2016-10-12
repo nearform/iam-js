@@ -14,9 +14,7 @@
     "eslint-config-standard": "^6.2.0",
     "eslint-plugin-promise": "^3.0.0",
     "eslint-plugin-standard": "^2.0.1",
-    "lab": "11.1.0",
-    "power-assert": "1.4.1",
-    "sinon": "1.17.6"
+    "lab": "11.1.0"
   },
   "dependencies": {
     "open-iam": "0.0.12",
