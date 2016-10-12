@@ -2,11 +2,13 @@ const Lab = require('lab')
 const assert = require('power-assert')
 const lab = exports.lab = Lab.script()
 const {describe, it, before} = lab
+const Code = require('code')
+const {expect} = Code
 const sinon = require('sinon')
-const iam = require('../lib/index.js')
+const Iam = require('../lib/index.js')
 
 describe('Basic access tests', () => {
-	var policies = [{
+	let policies = [{
 		Version: '2106-10-17',
 		Statement: [{
 			Effect: 'Allow',
@@ -18,27 +20,33 @@ describe('Basic access tests', () => {
 			Resource: ['resources/thing1/*']
 		}]
 	}]
+	let iam
 
-	// TODO
-	/* 
 	lab.before((done) => {
-		iam.createPolicies(policies, done)
-	}) */
+		Iam(policies, (i) => {
+			expect(i).to.exist()
+
+			iam = i
+
+			done()
+		})
+	})
 
 	it('should allow', done => {
-		iam.process(policies, 'resources/thing1/something', 'foo:bar:list', (err, result) => {
-			assert.ok(!err)
-			assert.equal(result, true)
+		iam.process('resources/thing1/something', 'foo:bar:list', (err, result) => {
+			expect(err).to.not.exist()
+			expect(result).to.be.true()
+
 			done()
 		})
 	})
 
 	it('should not allow', done => {
-		iam.process(policies, 'resources/thing2', 'foo:bar:list', (err, result) => {
-			assert.ok(!err)
-			assert.equal(result, false)
+		iam.process('resources/thing2', 'foo:bar:list', (err, result) => {
+			expect(err).to.not.exist()
+			expect(result).to.be.false()
+
 			done()
 		})
 	})
-
 })
