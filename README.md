@@ -11,26 +11,24 @@ IAM-js is a Policy Based Access Control library, closed modeled on AWS IAM. Also
 Protect your resources in our application called foo:
 ```
 const iam = require('iam-js');
-// iam.process(<resource>, <action>, <varibables>)
-if (iam.process('foo:bar-resource1', 'foo:deleteBar', {UserName: 'user1'}) {
-  // it's allowed
-  ...	
-} else {
-  // raise an error
-}
+// iam.process(<resource>, <action>, <variables>)
+if (iam.process('foo:bar-resource1', 'foo:deleteBar', {UserName: 'user1'}, (err, result) {
+  // err in case some error appears
+  // result true or false showing if the action is allowed or not on the resource
+})
 ```
 
 Create policies:
 ```
-// allow someone to delete all foo:bar resources 
-iam.createPolicies([{
+// allow someone to delete all foo:bar resources
+Iam([{
   effect: 'Allow',
   actions: ['foo:deleteBar'],
   resources: ['foo:bar-*']
 }], function callabck..)
 ```
 
-Policies are attached to Users & Teams, that is outside the scope of this library - there are no users & teams here, just policies. Also additional functionality, like listing what actions a user can perform on a resource are also out of scope here. 
+Policies are attached to Users & Teams, that is outside the scope of this library - there are no users & teams here, just policies. Also additional functionality, like listing what actions a user can perform on a resource are also out of scope here.
 
 ## Why Policy Based Access Control (PBAC)
 

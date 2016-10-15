@@ -4,19 +4,20 @@
   "description": "Policy Based Access Control inspired by AWS IAM",
   "main": "lib/index.js",
   "scripts": {
-    "test": "lab -I '__core-js_shared__' test",
-    "lint": "eslint ."
+    "test": "lab -v -L -I '__core-js_shared__' -r console test",
+    "lint": "lab -dL"
   },
   "author": "github.com/dberesford",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "3.6.1",
-    "lab": "11.1.0",
-    "power-assert": "1.4.1",
-    "sinon": "1.17.6"
+    "code": "^4.0.0",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^3.0.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "lab": "11.1.0"
   },
   "dependencies": {
-    "open-iam": "0.0.12",    
+    "open-iam": "0.0.12",
     "pbac": "dberesford/node-pbac"
   }
 }
