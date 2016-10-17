@@ -25,7 +25,7 @@ Iam([{
   effect: 'Allow',
   actions: ['foo:deleteBar'],
   resources: ['foo:bar-*']
-}], function callabck..)
+}], function callback..)
 ```
 
 Policies are attached to Users & Teams, that is outside the scope of this library - there are no users & teams here, just policies. Also additional functionality, like listing what actions a user can perform on a resource are also out of scope here.
