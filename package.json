@@ -10,14 +10,13 @@
   "author": "github.com/dberesford",
   "license": "MIT",
   "devDependencies": {
-    "code": "^4.0.0",
-    "eslint-config-standard": "^6.2.0",
-    "eslint-plugin-promise": "^3.0.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "lab": "11.1.0"
+    "code": "4.0.0",
+    "eslint-config-standard": "6.2.0",
+    "eslint-plugin-promise": "3.0.0",
+    "eslint-plugin-standard": "2.0.1",
+    "lab": "11.2.1"
   },
   "dependencies": {
-    "open-iam": "0.0.12",
-    "pbac": "dberesford/node-pbac"
+    "pbac": "0.1.3"
   }
 }
