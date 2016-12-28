@@ -6,6 +6,7 @@ const {expect} = Code
 const Iam = require('../lib/index.js')
 
 describe('actions function', () => {
+
   let policies = [
     {
       Version: '2106-10-17',
