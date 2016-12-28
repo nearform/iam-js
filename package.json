@@ -17,6 +17,7 @@
     "lab": "11.2.1"
   },
   "dependencies": {
+    "lodash": "^4.17.3",
     "pbac": "0.1.3"
   }
 }
