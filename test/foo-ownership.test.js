@@ -15,6 +15,7 @@ describe('Ownership', () => {
         'foo:bar:list',
         'foo:bar:read',
         'foo:bar:publish'],
+      /* eslint-disable no-template-curly-in-string */
       Resource: ['resources/${req:UserName}/*']
     }]
   }]
