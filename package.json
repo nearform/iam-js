@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "lab -v -L -I '__core-js_shared__' -r console test",
-    "performance": "node test/performance/pbacPerfTest.js && node test/performance/perfTest.js && node test/performance/perfTestDeny.js",
+    "performance": "node performance/pbacPerfTest.js && node performance/perfTest.js && node performance/perfTestDeny.js",
     "lint": "lab -dL"
   },
   "author": "github.com/dberesford",
