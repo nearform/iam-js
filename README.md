@@ -1,6 +1,6 @@
 # IAM-js
 
-IAM-js is a Policy Based Access Control library, closed modeled on AWS IAM. Also inspired by [Landon](https://github.com/ory-am/ladon)
+IAM-js is a Policy Based Access Control library, closely modeled on AWS IAM. Also inspired by [Landon](https://github.com/ory-am/ladon).
 
 ## Usage
 
