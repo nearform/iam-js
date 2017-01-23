@@ -46,3 +46,7 @@ The following module seems to satisfy our requirements here so far: https://www.
 
 http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html
 http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html
+
+# License
+
+Copyright nearForm 2017. Licensed under [MIT](/LICENSE)
